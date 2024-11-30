@@ -16,6 +16,10 @@ namespace Pizza.Services
             _container = new UnityContainer();
             _container.RegisterType<ICustomerRepository, CustomerRepository>(
                 new ContainerControlledLifetimeManager());
+
+            //новое
+            _container.RegisterType<IOrderRepository, OrderRepository>(
+                new ContainerControlledLifetimeManager());
         }
 
         public static IUnityContainer Container
